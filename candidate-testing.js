@@ -42,14 +42,12 @@ function gradeQuiz(candidateAnswers) {
 // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 for (j = 0; j < candidateArr.length; j++) {
    console.log("Your Answer: " + candidateArr[j]);
-  for (h = 0; h < correctAnswers.length; h++) {
-  
-  console.log("Correct Answer: " + correctAnswers[h]);
   
   
-  // console.log("Correct Answer: " + correctAnswers[h]);
-   
-   }
+  console.log("Correct Answer: " + correctAnswers[j]);
+  
+  
+  
   }
 
   let grade;
