@@ -45,20 +45,15 @@ if (candidateArr[i].toUpperCase() == correctAnswers[i].toUpperCase()){
 function gradeQuiz(candidateAnswers) {
 
 // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+ let grade = candidateCorrect / correctAnswers.length * 100;
+ console.log(`>>> Overall Grade: ${grade}% <<<`);
 
-  let finalScore = candidateCorrect / correctAnswers.length;
-  finalScore = finalScore * 100;
-  console.log(`>>> Overall Grade: ${finalScore}% <<<`);
-
-  if(finalScore >=80)
+  if(grade >=80)
     //console.log(`>>> Overall Grade: ${finalScore}% <<<`);
     console.log(`>>> Status: PASS <<<`);
   else 
     console.log(`>>> Status: FAILED <<<`)
    
-  
-
-  let grade;
   
 
   return grade ;
