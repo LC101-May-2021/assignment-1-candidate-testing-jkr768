@@ -10,18 +10,18 @@ let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = ("");
 let candidateArr = [];
+let candidateCorrect = 0;
 
-let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometes == 5000 meters ", "(5+3)/2*10=? ", "Given the array [8,'Orbit', 'Trajectory', 45], What entry is index 2? ", "What is the minimum crew size for the ISS? "];
+let questions = ["1) Who was the first American woman in space? ", "2) True or false: 5 kilometes == 5000 meters ", "3) (5+3)/2*10=? ", "4) Given the array [8,'Orbit', 'Trajectory', 45], What entry is index 2? ", "5) What is the minimum crew size for the ISS? "];
 
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = question;
- 
 
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
  candidateName = input.question("What is your name? ");
-  console.log(`Welcome ${candidateName}!`);
+  console.log(`Candidate Name: ${candidateName}!`);
 }
 
 function askQuestion() {
@@ -29,7 +29,14 @@ function askQuestion() {
 
 for (i = 0; i < questions.length; i++) {
    candidateAnswer = input.question(questions[i]);
-  candidateArr.push(candidateAnswer); 
+   candidateArr.push(candidateAnswer);
+   console.log(`Your Answer: ${candidateArr[i]}`);  
+   console.log(`Correct Answer: ${correctAnswers[i]}`);
+   console.log("");  
+
+if (candidateArr[i].toUpperCase() == correctAnswers[i].toUpperCase()){
+    candidateCorrect++;
+} 
 
   }
 }
@@ -38,11 +45,18 @@ for (i = 0; i < questions.length; i++) {
 function gradeQuiz(candidateAnswers) {
 
 // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-for (j = 0; j < candidateArr.length; j++) {
-   console.log(`Your Answer: ${candidateArr[j]}`);  
-   console.log(`Correct Answer: ${correctAnswers[j]}`);  
+
+  let finalScore = candidateCorrect / correctAnswers.length;
+  finalScore = finalScore * 100;
+  console.log(`>>> Overall Grade: ${finalScore}% <<<`);
+
+  if(finalScore >=80)
+    //console.log(`>>> Overall Grade: ${finalScore}% <<<`);
+    console.log(`>>> Status: PASS <<<`);
+  else 
+    console.log(`>>> Status: FAILED <<<`)
+   
   
-  }
 
   let grade;
   
