@@ -34,7 +34,7 @@ for (i = 0; i < questions.length; i++) {
    console.log(`Correct Answer: ${correctAnswers[i]}`);
    console.log("");  
 
-if (candidateAnswers[i].toUpperCase() == correctAnswers[i].toUpperCase()){
+if (candidateArr[i].toUpperCase() == correctAnswers[i].toUpperCase()){
     candidateCorrect++;
 } 
 
