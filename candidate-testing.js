@@ -21,7 +21,6 @@ let candidateAnswers = question;
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
  candidateName = input.question("What is your name?");
-  console.log(`Candidate Name: ${candidateName}!`);
 }
 
 function askQuestion() {
@@ -45,11 +44,11 @@ if (candidateArr[i].toUpperCase() == correctAnswers[i].toUpperCase()){
 function gradeQuiz(candidateAnswers) {
 
 // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
- let grade = candidateCorrect / correctAnswers.length * 100;
-  /*if(grade >=80)
+ let grade = ((candidateCorrect / correctAnswers.length)) * 100;
+  if(grade >=80)
     console.log(`>>> Status: PASS <<<`);
   else 
-    console.log(`>>> Status: FAILED <<<`);*/
+    console.log(`>>> Status: FAILED <<<`);
    
   console.log(grade);
 
@@ -59,7 +58,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  
+  console.log(`Candidate Name: ${candidateName}!`);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
